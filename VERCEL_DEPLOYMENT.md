@@ -74,9 +74,10 @@ curl https://your-backend-url.onrender.com/
 2. Import `Aerocodex777/AUTOMECH-AI`
 3. Configure:
    - **Framework Preset:** Vite
-   - **Root Directory:** `frontend`
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
+   - **Root Directory:** `frontend` ⚠️ **IMPORTANT: Click "Edit" and set this!**
+   - **Build Command:** `npm run build` (auto-detected)
+   - **Output Directory:** `dist` (auto-detected)
+   - **Install Command:** `npm install` (auto-detected)
 
 ### Step 3: Add Environment Variable
 In **"Environment Variables"** section, add:
