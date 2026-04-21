@@ -1,0 +1,226 @@
+{
+  "P0100": {
+    "description": "Mass Air Flow (MAF) Sensor Circuit Malfunction",
+    "system": "Fuel & Air Metering",
+    "causes": ["Dirty or faulty MAF sensor", "Air leaks in intake", "Wiring issues"],
+    "fix": "Clean MAF sensor with MAF cleaner spray. If persists, replace sensor.",
+    "severity": "Medium",
+    "professional_required": "No"
+  },
+  "P0101": {
+    "description": "MAF Sensor Range/Performance Problem",
+    "system": "Fuel & Air Metering",
+    "causes": ["Clogged air filter", "Faulty MAF sensor", "Vacuum leaks"],
+    "fix": "Replace air filter first. Clean MAF sensor. Check for vacuum leaks.",
+    "severity": "Medium",
+    "professional_required": "No"
+  },
+  "P0110": {
+    "description": "Intake Air Temperature Sensor Circuit Malfunction",
+    "system": "Fuel & Air Metering",
+    "causes": ["Faulty IAT sensor", "Damaged wiring", "Poor connection"],
+    "fix": "Inspect wiring and connector. Replace IAT sensor if needed.",
+    "severity": "Low",
+    "professional_required": "No"
+  },
+  "P0120": {
+    "description": "Throttle/Pedal Position Sensor A Circuit Malfunction",
+    "system": "Fuel & Air Metering",
+    "causes": ["Faulty TPS sensor", "Dirty throttle body", "Wiring issue"],
+    "fix": "Clean throttle body. Inspect TPS wiring. Replace TPS if needed.",
+    "severity": "High",
+    "professional_required": "Yes"
+  },
+  "P0171": {
+    "description": "System Too Lean (Bank 1)",
+    "system": "Fuel & Air Metering",
+    "causes": ["Vacuum leak", "Dirty fuel injectors", "Weak fuel pump", "Faulty O2 sensor"],
+    "fix": "Check for vacuum leaks. Clean injectors. Test fuel pressure.",
+    "severity": "Medium",
+    "professional_required": "No"
+  },
+  "P0172": {
+    "description": "System Too Rich (Bank 1)",
+    "system": "Fuel & Air Metering",
+    "causes": ["Faulty O2 sensor", "Leaking fuel injector", "High fuel pressure"],
+    "fix": "Inspect O2 sensor. Check fuel injectors for leaks. Test fuel pressure.",
+    "severity": "Medium",
+    "professional_required": "No"
+  },
+  "P0300": {
+    "description": "Random/Multiple Cylinder Misfire Detected",
+    "system": "Ignition System",
+    "causes": ["Worn spark plugs", "Faulty ignition coils", "Low compression", "Fuel delivery issue"],
+    "fix": "Replace spark plugs. Check ignition coils. Test compression.",
+    "severity": "High",
+    "professional_required": "Yes"
+  },
+  "P0301": {
+    "description": "Cylinder 1 Misfire Detected",
+    "system": "Ignition System",
+    "causes": ["Faulty spark plug (cyl 1)", "Bad ignition coil (cyl 1)", "Fuel injector issue"],
+    "fix": "Replace spark plug on cylinder 1. Swap ignition coil to test.",
+    "severity": "High",
+    "professional_required": "No"
+  },
+  "P0302": {
+    "description": "Cylinder 2 Misfire Detected",
+    "system": "Ignition System",
+    "causes": ["Faulty spark plug (cyl 2)", "Bad ignition coil (cyl 2)", "Fuel injector issue"],
+    "fix": "Replace spark plug on cylinder 2. Swap ignition coil to test.",
+    "severity": "High",
+    "professional_required": "No"
+  },
+  "P0400": {
+    "description": "Exhaust Gas Recirculation (EGR) Flow Malfunction",
+    "system": "Exhaust & Emissions",
+    "causes": ["Clogged EGR valve", "Faulty EGR solenoid", "Blocked EGR passages"],
+    "fix": "Clean EGR valve and passages. Test EGR solenoid. Replace if needed.",
+    "severity": "Medium",
+    "professional_required": "No"
+  },
+  "P0420": {
+    "description": "Catalyst System Efficiency Below Threshold (Bank 1)",
+    "system": "Exhaust & Emissions",
+    "causes": ["Worn catalytic converter", "Faulty O2 sensors", "Engine oil burning"],
+    "fix": "Test O2 sensors first. If OK, catalytic converter needs replacement.",
+    "severity": "Medium",
+    "professional_required": "Yes"
+  },
+  "P0440": {
+    "description": "Evaporative Emission Control System Malfunction",
+    "system": "Exhaust & Emissions",
+    "causes": ["Loose or faulty fuel cap", "Damaged EVAP hoses", "Faulty purge valve"],
+    "fix": "Tighten fuel cap first. Inspect EVAP hoses for cracks. Test purge valve.",
+    "severity": "Low",
+    "professional_required": "No"
+  },
+  "P0500": {
+    "description": "Vehicle Speed Sensor Malfunction",
+    "system": "Speed & Idle Control",
+    "causes": ["Faulty VSS", "Damaged wiring", "Transmission issue"],
+    "fix": "Inspect VSS wiring. Replace VSS sensor. Check transmission output shaft.",
+    "severity": "Medium",
+    "professional_required": "Yes"
+  },
+  "P0505": {
+    "description": "Idle Control System Malfunction",
+    "system": "Speed & Idle Control",
+    "causes": ["Dirty throttle body", "Faulty IAC valve", "Vacuum leak"],
+    "fix": "Clean throttle body and IAC valve. Check for vacuum leaks.",
+    "severity": "Medium",
+    "professional_required": "No"
+  },
+  "P0601": {
+    "description": "Internal Control Module Memory Check Sum Error",
+    "system": "Computer & Output Circuit",
+    "causes": ["ECU failure", "Power supply issue to ECU"],
+    "fix": "Check ECU power and ground connections. ECU may need replacement.",
+    "severity": "Critical",
+    "professional_required": "Yes"
+  },
+  "P0700": {
+    "description": "Transmission Control System Malfunction",
+    "system": "Transmission",
+    "causes": ["TCM fault", "Transmission solenoid issue", "Low transmission fluid"],
+    "fix": "Check transmission fluid level. Scan TCM for specific codes.",
+    "severity": "High",
+    "professional_required": "Yes"
+  },
+  "P0715": {
+    "description": "Input/Turbine Speed Sensor Circuit Malfunction",
+    "system": "Transmission",
+    "causes": ["Faulty speed sensor", "Metal debris on sensor", "Wiring damage"],
+    "fix": "Inspect and clean input speed sensor. Check wiring harness.",
+    "severity": "High",
+    "professional_required": "Yes"
+  },
+  "P0730": {
+    "description": "Incorrect Gear Ratio",
+    "system": "Transmission",
+    "causes": ["Slipping transmission", "Low fluid", "Worn clutch packs"],
+    "fix": "Check transmission fluid. If low, refill and retest. May need transmission service.",
+    "severity": "High",
+    "professional_required": "Yes"
+  },
+  "P0800": {
+    "description": "Transfer Case Control System MIL Request",
+    "system": "4WD / Transfer Case",
+    "causes": ["Transfer case sensor fault", "Low fluid"],
+    "fix": "Check transfer case fluid. Scan for specific sub-codes.",
+    "severity": "Medium",
+    "professional_required": "Yes"
+  },
+  "B0001": {
+    "description": "Airbag Deployment Control",
+    "system": "Airbag / SRS",
+    "causes": ["Faulty airbag module", "Clock spring issue", "Wiring fault"],
+    "fix": "Do NOT attempt DIY repair. Airbag systems require professional service.",
+    "severity": "Critical",
+    "professional_required": "Yes"
+  },
+  "C0035": {
+    "description": "Left Front Wheel Speed Sensor Circuit",
+    "system": "ABS / Brake",
+    "causes": ["Faulty wheel speed sensor", "Damaged wiring", "Wheel bearing issue"],
+    "fix": "Inspect left front wheel speed sensor and wiring. Replace sensor if faulty.",
+    "severity": "High",
+    "professional_required": "Yes"
+  },
+  "C0040": {
+    "description": "Right Front Wheel Speed Sensor Circuit",
+    "system": "ABS / Brake",
+    "causes": ["Faulty wheel speed sensor", "Damaged wiring", "Wheel bearing issue"],
+    "fix": "Inspect right front wheel speed sensor and wiring. Replace sensor if faulty.",
+    "severity": "High",
+    "professional_required": "Yes"
+  },
+  "P0010": {
+    "description": "A Camshaft Position Actuator Circuit (Bank 1)",
+    "system": "Valve Train",
+    "causes": ["Low engine oil", "Dirty oil", "Faulty camshaft actuator"],
+    "fix": "Check engine oil level and condition. Change oil if dirty. Inspect actuator.",
+    "severity": "High",
+    "professional_required": "Yes"
+  },
+  "P0011": {
+    "description": "A Camshaft Position Timing Over-Advanced (Bank 1)",
+    "system": "Valve Train",
+    "causes": ["Dirty engine oil", "Faulty oil control valve", "Stretched timing chain"],
+    "fix": "Change engine oil and filter immediately. Inspect VVT system.",
+    "severity": "High",
+    "professional_required": "Yes"
+  },
+  "P0340": {
+    "description": "Camshaft Position Sensor A Circuit Malfunction",
+    "system": "Ignition System",
+    "causes": ["Faulty CMP sensor", "Damaged wiring", "Timing chain issue"],
+    "fix": "Inspect CMP sensor and wiring. Replace sensor if faulty.",
+    "severity": "High",
+    "professional_required": "No"
+  },
+  "P0335": {
+    "description": "Crankshaft Position Sensor A Circuit Malfunction",
+    "system": "Ignition System",
+    "causes": ["Faulty CKP sensor", "Damaged wiring", "Reluctor ring damage"],
+    "fix": "Inspect CKP sensor and wiring. Replace sensor. Check reluctor ring.",
+    "severity": "Critical",
+    "professional_required": "Yes"
+  },
+  "P0562": {
+    "description": "System Voltage Low",
+    "system": "Electrical",
+    "causes": ["Weak battery", "Failing alternator", "Poor ground connection"],
+    "fix": "Test battery voltage. Test alternator output. Check ground connections.",
+    "severity": "High",
+    "professional_required": "No"
+  },
+  "P0563": {
+    "description": "System Voltage High",
+    "system": "Electrical",
+    "causes": ["Faulty voltage regulator", "Bad alternator", "Wiring issue"],
+    "fix": "Test alternator output voltage. Replace voltage regulator or alternator.",
+    "severity": "High",
+    "professional_required": "Yes"
+  }
+}
