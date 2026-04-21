@@ -2,8 +2,9 @@ import { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 import DiagnosticResult from './DiagnosticResult'
 import ProductCard from './ProductCard'
+import { API_URL } from '../config'
 
-const API = 'http://localhost:8000'
+const API = API_URL
 
 const INITIAL_MESSAGE = {
   role: 'bot',

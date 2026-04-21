@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { API_URL } from '../config'
 
-const API = 'http://localhost:8000'
+const API = API_URL
 
 const MAKES = ['Maruti Suzuki', 'Hyundai', 'Tata', 'Honda', 'Toyota', 'Mahindra', 'Hero', 'Bajaj', 'TVS', 'Kia', 'MG', 'Other']
 const FUELS = ['Petrol', 'Diesel', 'CNG', 'Electric', 'Hybrid']

@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import axios from 'axios'
+import { API_URL } from '../config'
 
-const API = 'http://localhost:8000'
+const API = API_URL
 
 export default function LoginPage({ onLogin }) {
   const [isRegisterMode, setIsRegisterMode] = useState(false)
