@@ -1,8 +1,12 @@
-# Core Agent Framework
-langchain==0.3.14
-langchain-core==0.3.83
-langchain-community==0.3.14
+# Core Agent Framework (compatible versions)
+langchain==0.3.7
+langchain-core==0.3.15
+langchain-community==0.3.7
 langchain-groq==0.2.1
+langsmith>=0.1.17,<0.3
+
+# Groq SDK
+groq>=0.9.0
 
 # OpenAI (optional - for vision fallback)
 openai>=1.0.0
@@ -46,6 +50,3 @@ email-validator==2.1.0
 # Agentic AI Dependencies
 langchain-experimental==0.0.65
 wikipedia==1.4.0
-
-# Groq SDK
-groq>=0.9.0
