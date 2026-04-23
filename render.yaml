@@ -1,0 +1,33 @@
+# Render Blueprint for AutoMech
+# This file defines the infrastructure for deploying AutoMech on Render
+
+services:
+  # Backend API Service
+  - type: web
+    name: automech-backend
+    runtime: python
+    region: singapore
+    plan: free
+    branch: main
+    rootDir: backend
+    buildCommand: bash render-build.sh
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PREFER_CLOUD_LLM
+        value: true
+      - key: GROQ_API_KEY
+        sync: false  # Set manually in Render dashboard
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: PYTHON_VERSION
+        value: 3.11.9
+    healthCheckPath: /
+
+  # PostgreSQL Database (Optional)
+  # Uncomment to add database
+  # - type: pgsql
+  #   name: automech-db
+  #   region: singapore
+  #   plan: free
+  #   databaseName: automech
+  #   databaseUser: automech
