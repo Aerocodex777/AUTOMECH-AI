@@ -8,12 +8,21 @@ set -e  # Exit on error
 echo "🚀 AutoMech Full Stack Build Starting..."
 echo "=========================================="
 
+# ── Python Version Check ───────────────────────────────────────────────────
+
+echo ""
+echo "🐍 Checking Python version..."
+python --version
+
 # ── Backend Setup ──────────────────────────────────────────────────────────
 
 echo ""
 echo "📦 Step 1: Installing Backend Dependencies..."
 pip install --upgrade pip setuptools wheel
-pip install -r backend/requirements.txt
+
+# Install with pre-built wheels only (no compilation)
+pip install --only-binary=:all: -r backend/requirements.txt || pip install -r backend/requirements.txt
+
 echo "✅ Backend dependencies installed"
 
 # ── Frontend Setup ─────────────────────────────────────────────────────────
