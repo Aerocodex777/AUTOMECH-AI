@@ -1,12 +1,16 @@
 from fastapi import FastAPI, Depends, HTTPException, UploadFile, File, Form, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from pydantic import BaseModel, EmailStr
 from typing import Optional, List, Dict
 import uvicorn
 from datetime import datetime
+import os
+from pathlib import Path
 
 from database import init_db, get_db, VehicleProfile, DiagnosticHistory, User, ChatHistory
 from agent import run_diagnostic
@@ -34,7 +38,14 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:5174", "http://localhost:3000", "http://127.0.0.1:5173", "http://127.0.0.1:5174"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://localhost:5174", 
+        "http://localhost:3000",
+        "http://127.0.0.1:5173",
+        "http://127.0.0.1:5174",
+        "*"  # Allow all origins for full-stack deployment
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -652,6 +663,27 @@ async def predict_future_issues(symptoms: str, vehicle_id: Optional[int] = None,
         "predictions": predictions,
         "message": message
     }
+
+
+# ── Static Files (Serve Frontend) ────────────────────────────────────────────
+
+# Mount static files for production (when frontend is built)
+frontend_dist = Path(__file__).parent.parent / "frontend" / "dist"
+if frontend_dist.exists():
+    app.mount("/assets", StaticFiles(directory=str(frontend_dist / "assets")), name="assets")
+    
+    @app.get("/{full_path:path}")
+    async def serve_frontend(full_path: str):
+        """Serve frontend for all non-API routes"""
+        # Skip API routes
+        if full_path.startswith(("api/", "docs", "redoc", "openapi.json")):
+            raise HTTPException(status_code=404)
+        
+        # Serve index.html for all other routes (SPA)
+        index_file = frontend_dist / "index.html"
+        if index_file.exists():
+            return FileResponse(index_file)
+        raise HTTPException(status_code=404)
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────

@@ -1,17 +1,16 @@
-# Render Blueprint for AutoMech
-# This file defines the infrastructure for deploying AutoMech on Render
+# Render Blueprint for AutoMech - Full Stack Deployment
+# This deploys both frontend and backend on a single Render service
 
 services:
-  # Backend API Service
+  # Full Stack Web Service (Backend + Frontend)
   - type: web
-    name: automech-backend
+    name: automech-fullstack
     runtime: python
     region: singapore
     plan: free
     branch: main
-    rootDir: backend
-    buildCommand: bash render-build.sh
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    buildCommand: bash render-fullstack-build.sh
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PREFER_CLOUD_LLM
         value: true
@@ -21,6 +20,8 @@ services:
         generateValue: true
       - key: PYTHON_VERSION
         value: 3.11.9
+      - key: NODE_VERSION
+        value: 18.x
     healthCheckPath: /
 
   # PostgreSQL Database (Optional)
