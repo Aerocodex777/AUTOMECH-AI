@@ -8,20 +8,31 @@ set -e  # Exit on error
 echo "🚀 AutoMech Full Stack Build Starting..."
 echo "=========================================="
 
-# ── Python Version Check ───────────────────────────────────────────────────
+# ── Python Version Check & Fix ─────────────────────────────────────────────
 
 echo ""
 echo "🐍 Checking Python version..."
-python --version
+PYTHON_VERSION=$(python --version 2>&1 | awk '{print $2}')
+echo "Current Python: $PYTHON_VERSION"
+
+# Check if Python 3.11 is available
+if command -v python3.11 &> /dev/null; then
+    echo "✅ Found Python 3.11, using it..."
+    alias python=python3.11
+    alias pip=pip3.11
+    PYTHON_VERSION=$(python --version 2>&1 | awk '{print $2}')
+    echo "Now using Python: $PYTHON_VERSION"
+fi
 
 # ── Backend Setup ──────────────────────────────────────────────────────────
 
 echo ""
 echo "📦 Step 1: Installing Backend Dependencies..."
-pip install --upgrade pip setuptools wheel
+python -m pip install --upgrade pip setuptools wheel
 
-# Install with pre-built wheels only (no compilation)
-pip install --only-binary=:all: -r backend/requirements.txt || pip install -r backend/requirements.txt
+# Install dependencies
+echo "Installing from requirements.txt..."
+python -m pip install -r backend/requirements.txt
 
 echo "✅ Backend dependencies installed"
 
@@ -34,7 +45,6 @@ cd frontend
 # Check if npm is available
 if ! command -v npm &> /dev/null; then
     echo "❌ npm not found! Installing Node.js..."
-    # Render should have Node.js, but just in case
     curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
     apt-get install -y nodejs
 fi
