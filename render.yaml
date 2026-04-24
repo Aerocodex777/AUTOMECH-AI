@@ -10,7 +10,7 @@ services:
     plan: free
     branch: main
     buildCommand: bash render-fullstack-build.sh
-    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    startCommand: bash start-server.sh
     envVars:
       - key: PREFER_CLOUD_LLM
         value: true
