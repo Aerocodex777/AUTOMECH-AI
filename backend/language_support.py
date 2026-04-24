@@ -206,9 +206,11 @@ def get_example_queries(lang: str = 'en') -> Dict[str, str]:
 if __name__ == "__main__":
     # Test language detection
     print("Testing language detection:")
-    print(f"English: {detect_language('My car won\'t start')}")
+    test_text = "My car won't start"
+    print(f"English: {detect_language(test_text)}")
     print(f"Malayalam: {detect_language('എന്റെ കാർ സ്റ്റാർട്ട് ആകുന്നില്ല')}")
-    print(f"Mixed: {detect_language('My കാർ won\'t start')}")
+    test_mixed = "My കാർ won't start"
+    print(f"Mixed: {detect_language(test_mixed)}")
     
     print("\nMalayalam greeting:")
     print(get_malayalam_greeting())
