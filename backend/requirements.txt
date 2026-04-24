@@ -1,8 +1,8 @@
-# Core Agent Framework (compatible versions)
-langchain==0.3.7
-langchain-core==0.3.15
-langchain-community==0.3.7
-langchain-groq==0.2.1
+# Core Agent Framework - Let pip resolve compatible versions
+langchain>=0.3.0,<0.4.0
+langchain-core>=0.3.17,<0.4.0
+langchain-community>=0.3.0,<0.4.0
+langchain-groq>=0.2.0
 langsmith>=0.1.17,<0.3
 
 # Groq SDK
@@ -21,7 +21,7 @@ fastapi==0.112.1
 uvicorn[standard]==0.30.6
 python-multipart==0.0.9
 
-# Database (vehicle profiles - PostgreSQL / SQLite fallback)
+# Database
 sqlalchemy==2.0.32
 asyncpg==0.29.0
 aiosqlite>=0.19.0
@@ -37,10 +37,8 @@ Pillow>=10.0.0,<11.0.0
 pypdf2==3.0.1
 python-docx==1.1.0
 
-# Utilities - Use pydantic 2.7.4 with pre-built wheels
+# Utilities
 pydantic>=2.7.4,<3.0.0
-annotated-types>=0.4.0
-pydantic-core>=2.18.0
 python-dotenv==1.0.1
 
 # Authentication & Security
@@ -50,5 +48,5 @@ python-jose[cryptography]==3.3.0
 email-validator==2.1.0
 
 # Agentic AI Dependencies
-langchain-experimental==0.0.65
+langchain-experimental>=0.0.60
 wikipedia==1.4.0
