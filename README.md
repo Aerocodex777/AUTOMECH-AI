@@ -201,6 +201,6 @@ For issues or questions:
 
 ---
 
-**Made with ❤️ for Kerala's automotive community**
+**Made with ❤️ by sreehari for Kerala's automotive community**
 
 🔧 Diagnose faster. Fix smarter. Drive safer.
